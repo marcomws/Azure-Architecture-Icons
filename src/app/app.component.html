@@ -1,0 +1,42 @@
+<header class="header">
+  Azure Architecture Icons
+  <span class="dir">
+    {{ isSearch ? " / search" : selectedDir }}
+  </span>
+
+  <div class="search-container" *ngIf="PDFsOpened">
+    <form (submit)="onSearch()" action="#">
+      <input
+        type="text"
+        placeholder="Search ico.."
+        name="search"
+        [(ngModel)]="search"
+        autocomplete="off" />
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</header>
+
+<div class="container" *ngIf="PDFsOpened">
+  <div class="col col-1">
+    <ul>
+      <li *ngFor="let dirName of dirNames">
+        <a (click)="selected(dirName)" [routerLink]="['/viewIcons', dirName]">
+          {{ dirName }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col col-2">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div class="pdf" *ngIf="!PDFsOpened">
+  <h3>Just making sure you open FAQ & Terms of Use first :)</h3>
+  <a (click)="openPDF('Azure_Icons_FAQ.pdf')">Azure_Icons_FAQ</a>
+  <a (click)="openPDF('Microsoft_Terms_of_Use.pdf')">Microsoft_Terms_of_Use</a>
+  <a (click)="openPDF('CELA_Licenses_Public_Use_Icons.pdf')">CELA_Licenses_Public_Use_Icons.pdf</a>
+  <a (click)="openPDF('Dynamics 365_Icons_FAQ.pdf')">Dynamics 365_Icons_FAQ.pdf</a>
+  <a (click)="openPDF('Power_Platform_Icons_FAQ.pdf')">Power_Platform_Icons_FAQ.pdf</a>
+</div>

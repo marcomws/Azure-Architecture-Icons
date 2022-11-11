@@ -1,0 +1,6 @@
+<div class="container" *ngIf="iconsGroup?.icons?.length">
+  <div class="icon-block" *ngFor="let ico of iconsGroup.icons">
+    <img [src]="'assets/azure-icons/' + iconsGroup.dirName + '/' + ico" />
+    <span>{{ ico | trimIcoName }}</span>
+  </div>
+</div>

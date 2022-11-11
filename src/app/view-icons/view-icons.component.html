@@ -1,0 +1,8 @@
+<app-icons-block [iconsGroup]="icons"></app-icons-block>
+
+<div class="container" *ngIf="!icons">
+  <div class="icon-block" *ngFor="let ico of iconsPH; let i = index">
+    <img class="placeholder-{{i}}" src="assets/imgs/azure.svg" />
+    <span>azure ico</span>
+  </div>
+</div>

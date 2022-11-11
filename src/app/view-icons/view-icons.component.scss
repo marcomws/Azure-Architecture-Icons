@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .icon-block {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    font-size: xx-small;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    padding-bottom: 20px;
+
+    img {
+      height: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@for $i from 0 through 20 {
+  .placeholder-#{$i} {
+    filter: brightness(calc(100% * (($i + 12) / 12)))
+      grayscale(calc(100% * ($i + 5) / 15));
+  }
+}

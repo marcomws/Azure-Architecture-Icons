@@ -1,0 +1,10 @@
+<div class="container" *ngIf="icons">
+  <div class="icon-group" *ngFor="let icoGroup of icons">
+    <h4 class="icon-dirName">{{ " / " + icoGroup.dirName }}</h4>
+    <app-icons-block [iconsGroup]="icoGroup"></app-icons-block>
+  </div>
+</div>
+
+<div class="container placeholder" *ngIf="!icons || icons.length === 0">
+  <img src="assets/imgs/notFound.png" />
+</div>
